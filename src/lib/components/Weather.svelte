@@ -1,7 +1,7 @@
 <!-- src/Weather.svelte -->
 <script>
   import { onMount } from "svelte";
-  import { goto } from '$app/navigation'; // Import the goto function
+  import { goto } from "$app/navigation"; // Import the goto function
   // import { link } from "svelte-routing";
   import { translations } from "../translations/translations.js";
   import Clock from "./Clock.svelte";
@@ -76,8 +76,7 @@
         <button on:click={scrollToContent}>شاهد الطقس</button>
       </div> -->
       <div class="search">
-        <button on:click={() => goto('about')}>من نحن</button>
-        
+        <button on:click={() => goto("about")}>من نحن</button>
       </div>
 
       <div class="search">
@@ -373,6 +372,25 @@
     }
   }
 
+  
+@media (max-width: 768px) {
+  .header {
+    display: block;
+    // align-items: flex-start; /* Align items to the start */
+    
+    .search {
+      // width: 100%; /* Make the search bar take up full width */
+      display: block;
+      width: 100%; 
+      input[type="text"] {
+        // width: 100%; /* Make the input take up full width */
+        &:hover {
+          // width: 100%; /* Keep the width 100% on hover */
+        }
+      }
+    }
+  }
+}
   /* Adjust styles for smaller screens */
   @media (max-width: 768px) {
     .search {
