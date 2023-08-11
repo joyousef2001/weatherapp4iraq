@@ -1,0 +1,84 @@
+/* Weather.scss */
+body {
+  background-color: #0b131e;
+  color: white;
+  direction: rtl; /* Right-to-left text direction for Arabic */
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: #0b131e;
+  color: white;
+  font-family: Arial, sans-serif;
+  width: 80%;
+  margin: auto;
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px 0; /* Add some vertical spacing between rows */
+  }
+}
+
+.card {
+  color: white;
+  border: #e4e4e4 solid 2px;
+  background-color: rgba(240, 240, 240, 0.2); /* Transparent background */
+  // margin: 20px;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+  font-size: 20px;
+
+  // &:hover {
+  //   background-color: rgba(240, 240, 240, 0.3);
+  //   transform: translateY(-5px);
+  // }
+}
+
+.header-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
+
+  .header-button {
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #555;
+    }
+  }
+}
+
+/* Add responsive styles */
+@media screen and (max-width: 768px) {
+  .card {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .header-card {
+    height: auto;
+    padding: 10px;
+    .header-button {
+      padding: 8px 15px;
+      font-size: 16px;
+    }
+  }
+}
