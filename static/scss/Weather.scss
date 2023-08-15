@@ -2,7 +2,8 @@
 body {
   background-color: #0b131e;
   color: white;
-  direction: rtl; /* Right-to-left text direction for Arabic */
+  direction: rtl;
+  /* Right-to-left text direction for Arabic */
   margin: 0;
   padding: 0;
 }
@@ -10,25 +11,27 @@ body {
 .container {
   max-height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   background-color: #0b131e;
   color: white;
   font-family: Arial, sans-serif;
-  width: 80%;
+  // width: 80%;
   margin: auto;
 
   .row {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 10px 0; /* Add some vertical spacing between rows */
+    padding: 10px 0;
+    /* Add some vertical spacing between rows */
   }
 }
 
 .card {
   color: white;
   border: #e4e4e4 solid 2px;
-  background-color: rgba(240, 240, 240, 0.2); /* Transparent background */
+  background-color: rgba(240, 240, 240, 0.2);
+  /* Transparent background */
   // margin: 20px;
   border-radius: 20px;
   padding: 20px;
@@ -76,6 +79,7 @@ body {
   .header-card {
     height: auto;
     padding: 10px;
+
     .header-button {
       padding: 8px 15px;
       font-size: 16px;
