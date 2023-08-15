@@ -40,12 +40,18 @@
       thunderstorm: "thunderstorms.svg",
       snow: "snow.svg",
       mist: "mist.svg",
+      dust: "dust.svg",
+      "overcast clouds": "overcast.svg",
+      "light rain": "raindrop.svg",
       // ... add more mappings for other weather descriptions
     };
 
     const defaultSvg = "not-available.svg"; // Default SVG image
 
     const svgFilename = svgMapping[weatherDescription] || defaultSvg;
+    if (svgFilename == defaultSvg) {
+      console.log(weatherDescription);
+    }
 
     const svgSource = `./image/fill/svg/${svgFilename}`;
 
@@ -187,9 +193,10 @@
           {#each WeatherWeak as day, index}
             <!-- {console.log(day)} -->
             <!-- Debugging statement -->
+
             <div class="day">
               <img
-                src={setWeatherIcon(weatherData.weather[0].description)}
+                src={setWeatherIcon(day.weatherData.weather[0].description)}
                 alt={day.date}
               />
               <p class="day-name">{day.arab_name}</p>
@@ -323,7 +330,7 @@
     font-size: 1.2rem;
     margin-top: 20px;
     .clocktime {
-      width: 200px;
+      width: 30vh;
     }
     .current-time {
       font-weight: bold;
@@ -372,25 +379,24 @@
     }
   }
 
-  
-@media (max-width: 768px) {
-  .header {
-    display: block;
-    // align-items: flex-start; /* Align items to the start */
-    
-    .search {
-      // width: 100%; /* Make the search bar take up full width */
+  @media (max-width: 768px) {
+    .header {
       display: block;
-      width: 100%; 
-      input[type="text"] {
-        // width: 100%; /* Make the input take up full width */
-        &:hover {
-          // width: 100%; /* Keep the width 100% on hover */
+      // align-items: flex-start; /* Align items to the start */
+
+      .search {
+        // width: 100%; /* Make the search bar take up full width */
+        display: block;
+        width: 100%;
+        input[type="text"] {
+          // width: 100%; /* Make the input take up full width */
+          &:hover {
+            // width: 100%; /* Keep the width 100% on hover */
+          }
         }
       }
     }
   }
-}
   /* Adjust styles for smaller screens */
   @media (max-width: 768px) {
     .search {
@@ -402,7 +408,7 @@
     // flex: none;
     display: flex;
     justify-content: space-around;
-    font-size: 24px;
+    font-size: 1.2rem;
     width: 100%;
   }
 
@@ -517,8 +523,8 @@
   }
 
   .containier-sidebar {
-    width: 75%;
-    margin-right: 350px;
+    width: 70%;
+    margin-left: 1%;
   }
   @media (max-width: 768px) {
     .containier-sidebar {
